@@ -1,6 +1,7 @@
 package controller;
 
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -92,7 +93,7 @@ public class AccountControllerTest {
 
 	@Test
 	public void testLogout() {
-		assertTrue("Invalid Logout", ac.logout()==false);
+		assertTrue("Invalid Logout", ac.logout() == false);
 	}
 
 }
