@@ -20,6 +20,7 @@ public class StudentFunctionalityControllerTest {
 		assertTrue("The user name bill does not exist", !sfc.manageDetails("bill", "bob", "bob", "billy"));
 		assertTrue("The username kent now has their first name as superman", sfc.manageDetails("kent", "superman", "clark", "password"));
 		assertTrue("The user did not enter a username", !sfc.manageDetails(null, "superman", "clark", "password"));
+		assertTrue("The username is incorrect", !sfc.manageDetails("agsasg", "superman", "clark", "password"));
 	}
 
 	@Test
@@ -46,6 +47,7 @@ public class StudentFunctionalityControllerTest {
 		sfc.removeUniversity("juser", "BROWN");
 		assertTrue("juser now doesn't have BROWN saved", !sfc.viewSavedUniversities("juser").contains("BROWN"));
 		assertFalse("The university to delete is null", sfc.removeUniversity("juser", null));
+		assertFalse("Username is incorrect", sfc.removeUniversity("asdg", "BROWN"));
 	}
 
 }
